@@ -1,13 +1,25 @@
 {
-  "builds": [{
-    "src": "visual_cryptography/wsgi.py",
-    "use": "@vercel/python",
-    "config": { "maxLambdaSize":  "15mb", "runtime":  "python3.9" }
-  }],
+  "builds": [
+    {
+      "src": "visual_cryptography/wsgi.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "build.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles"
+      }
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "visual_cryptography/wsgi.py"
+    },
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
     }
   ]
 }
