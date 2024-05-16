@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-px_$jaj(2-8g-$_(9sxq@5yikvk#p^z5a#malu4nic59%gpjs8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'visual_cryptography.wsgi.application'
+WSGI_APPLICATION = 'visual_cryptography.wsgi.app'
 
 
 # Database
