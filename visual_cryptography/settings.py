@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'visual_cryptography.wsgi.app'
+WSGI_APPLICATION = 'visual_cryptography.wsgi.application'
 
 
 # Database
