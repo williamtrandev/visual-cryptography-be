@@ -9,6 +9,24 @@ from applications.tasks import task_generate_shares_from_color, task_combine_sha
     task_generate_shares_from_binary
 
 
+from datetime import datetime
+
+from django.http import HttpResponse
+
+
+def index(request):
+    now = datetime.now()
+    html = f'''
+    <html>
+        <body>
+            <h1>Hello from Vercel!</h1>
+            <p>The current time is { now }.</p>
+        </body>
+    </html>
+    '''
+    return HttpResponse(html)
+
+
 @api_view(['POST'])
 def api_encrypt_image(request):
     body = request.data
